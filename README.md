@@ -5,14 +5,14 @@ I chose to do my project using HTML,CSS,Javascript. The site can be viewed at [h
 
 ## Pages
 The project consists of 3 webpages -login page,home page,course page.
-###login page:
+### login page:
 login page has entries for mailID and password which are currently not available.
 The next page can be accessed without entering details.
 ### Home Page:
 The Home page has the list of courses offered. The list can be sorted using a filter icon in the nav-bar.
 The profile button has not been developed due to insufficient time and the logout button takes you to the login page.
 Clicking on any of the course redirects to the course page.
-###Course Page:
+### Course Page:
 The course page has details regarding grading schemes and has section for uploading the course material.
 There is also section for posting comments which can be seen at the bottom of the page;
 
