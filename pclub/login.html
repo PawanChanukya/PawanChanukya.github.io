@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        @keyframes pageFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+        body{
+            /* background-image: url(./Assets/pexels-matheus-viana-2414036.jpg); */
+            background-repeat: no-repeat;
+            background-size:auto;
+            animation : pageFadeIn 1.5s;
+        }
+        @media (orientation: landscape){
+            body{
+                background-image: url(./Assets/pexels-matheus-viana-2414036.jpg);
+            }
+        }
+
+        @media (orientation: portrait){
+            body{
+                background-image: url(./Assets/5566879.jpg);
+            }
+        }
+        .input{
+            text-align: center;
+            height: 400px;
+            width: 400px;
+            background-color:rgb(247, 247, 247);
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,30%);
+            border: 2px solid rgb(118, 118, 118);
+            border-radius: 20px;
+        }
+        .mailId,.password
+        {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        input{
+            height: 20px;
+            transform: translateX(5px);
+        }
+        
+        .Submit > a{
+            text-decoration: none;
+            transform: translateY(5px);
+            transform: translateX(160px); 
+            background-color: black;
+          color: white;
+          border-radius: 15px;
+          height: 30px;
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        a:hover{
+            background-color: blueviolet;
+            color: rgb(247, 247, 247);
+        }
+
+        .extra{
+            display: flex;
+            justify-content: space-around;
+            transform: translateY(25px);
+        }
+        .extra >a:hover{
+            background-color: rgb(247, 247, 247);
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <div class="input">
+        <img src="./Assets/192-1925162_login-icon-png-transparent-png.png" alt="logo" width="80px"/>
+        <div class="mailId">
+            <p>Mail ID :</p>
+            <input placeholder="IITK mailId" name="mail"/>
+        </div>
+        <div class="password">
+            <p>Password :</p>
+            <input placeholder="Password" name="password"/>
+        </div>
+        <div class="Submit">
+            <a href="./home.html">Submit</a>
+        </div>
+        <div class="extra">
+            <a href="$">Forgot password?</a>
+            <a href="&">Create new account</a>
+        </div>
+    </div>
+    <script>
+        window.onresize=function(){
+        var width=window.innerWidth;
+        var height=window.innerHeight;
+        if(width/height <1)
+        {
+            document.body.style.backgroundImage="url('./Assets/5566879.jpg')";
+            var Id=document.querySelector(".mailId");
+            
+        }
+        else{
+            document.body.style.backgroundImage="url('./Assets/pexels-matheus-viana-2414036.jpg')";
+        }
+    }
+    </script>
+</body>

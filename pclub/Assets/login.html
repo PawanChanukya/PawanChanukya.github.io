@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/login.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        body{
+            background-image: url(./Assets/pexels-matheus-viana-2414036.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .input{
+            text-align: center;
+            height: 400px;
+            width: 400px;
+            background-color:rgb(247, 247, 247);
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,30%);
+            border: 2px solid rgb(118, 118, 118);
+            border-radius: 20px;
+        }
+        .mailId,.password
+        {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        input{
+            height: 20px;
+            transform: translateX(5px);
+        }
+        
+        /* .Submit{
+          
+          height: 30px;
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          transform: translateX(175px);  
+          background-color: blueviolet;
+          color: white;
+          border-radius: 15px;
+        } */
+        .Submit > a{
+            text-decoration: none;
+            transform: translateY(5px);
+            transform: translateX(160px); 
+            background-color: black;
+          color: white;
+          border-radius: 15px;
+          height: 30px;
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        a:hover{
+            background-color: blueviolet;
+            color: rgb(247, 247, 247);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="input">
+        <img src="./login_files/192-1925162_login-icon-png-transparent-png.png" alt="logo" width="80px">
+        <div class="mailId">
+            <p>Mail ID :</p>
+            <input placeholder="IITK mailId" name="mail">
+        </div>
+        <div class="password">
+            <p>Password :</p>
+            <input placeholder="Password" name="password">
+        </div>
+        <div class="Submit">
+            <a href="http://127.0.0.1:5500/home.html">Submit</a>
+        </div>
+
+    </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

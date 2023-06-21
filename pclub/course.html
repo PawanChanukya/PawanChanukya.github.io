@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body
+        {
+            background-color: rgb(237, 237, 237);
+        }
+        .footer{
+            position: absolute;
+            bottom: 5px;
+            left: 50vw;
+            height: 100px;
+            width: 90vw;
+            transform: translateX(-50%);
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            background-color: white;
+        }
+        .comment{
+            width: 80vw;
+        }
+        .comment input{
+            border: 1px solid rgb(61, 61, 61);
+            width: 50vw;
+            overflow: scroll;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .material{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgb(237, 237, 237);
+            background-color: white;
+        }
+        .material a{
+            text-decoration: none;
+            padding: 10px;
+            color: black;
+        }
+        .material a:hover{
+            text-decoration: underline;
+            color: blue;
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+        }
+        .list div{
+            border-radius: 20px;
+            width:80vw;
+            border: 1px solid rgb(61, 61, 61);
+            background-color: white;
+            margin: 5px;
+        }
+        .list >div>p{
+            transform: translateX(10px);
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            border: 1px solid rgb(61, 61, 61);
+            border-radius: 20px;
+            background-color: rgb(77, 77, 255);
+            color: rgb(0, 0, 0);
+        }
+        button:hover{
+            background-color: purple;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-decoration: underline; text-align: center;">Course details</h1>
+    <h2>Grading Scheme : </h2>
+    <img src="./Assets/passdetails.png" width="600px" alt="pass details" />
+    <h2>Course material : </h2>
+    <div class="material">
+        <a href="#">First course handout.pdf</a>
+        <a href="#">Lectures.pdf</a>
+        <a href="#">References.pdf</a>
+    </div>
+    <h2>Comments</h2>
+    <div class="list">
+        <div >
+        <p>This is a very important course....</p>
+        </div>
+    </div>
+    <button onclick="addComment()" style="margin: 10px; float: right;">Comment</button>
+    <script>
+        function addComment(){
+            alert("addcomment started");
+            var footer=document.createElement('div');
+            var response=document.createElement('div');
+            var comment=document.createElement('input');
+            var submit =document.createElement('button');
+            footer.classList.add('footer');
+            response.appendChild(comment);
+            comment.classList.add('input');
+            comment.setAttribute("placeholder","Comment here");
+            response.appendChild(submit);
+            response.classList.add('comment');
+            response.style.display='flex';
+            response.style.justifyContent='space-around';
+            response.style.alignContent='center';
+            footer.appendChild(response);
+            document.body.appendChild(footer);
+            submit.textContent='Post Comment';
+            submit.setAttribute('onclick',"pastecomment()");
+        }
+        function pastecomment(){
+            alert("paste comment started");
+            var text=document.createElement('p');
+            var container=document.createElement('div');
+            text.textContent=document.querySelector(".input").value;
+            container.appendChild(text);
+            document.querySelector(".list").appendChild(container);
+            document.querySelector(".footer").innerHTML='';
+            document.querySelector(".footer").remove();
+        }
+    </script>
+</body>
