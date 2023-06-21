@@ -56,6 +56,9 @@
         .list >div>p{
             transform: translateX(10px);
         }
+        .list >div>img{
+            transform: translate(3px,3px);
+        }
         button{
             width: 100px;
             height: 40px;
@@ -84,13 +87,13 @@
     <h2>Comments</h2>
     <div class="list">
         <div >
-        <p>This is a very important course....</p>
+                <img src="./Assets/user_318-159711.avif" alt="user" width="40px" />
+            <p>This is a very important course....</p>
         </div>
     </div>
     <button onclick="addComment()" style="margin: 10px; float: right;">Comment</button>
     <script>
         function addComment(){
-            
             var footer=document.createElement('div');
             var response=document.createElement('div');
             var comment=document.createElement('input');
@@ -110,10 +113,13 @@
             submit.setAttribute('onclick',"pastecomment()");
         }
         function pastecomment(){
-            
             var text=document.createElement('p');
             var container=document.createElement('div');
+            var logo=document.createElement('img');
+            logo.setAttribute('src','./Assets/user_318-159711.avif');
+            logo.setAttribute('width','40px');
             text.textContent=document.querySelector(".input").value;
+            container.appendChild(logo);
             container.appendChild(text);
             document.querySelector(".list").appendChild(container);
             document.querySelector(".footer").innerHTML='';
