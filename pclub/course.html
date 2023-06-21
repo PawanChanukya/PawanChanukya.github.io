@@ -90,7 +90,7 @@
     <button onclick="addComment()" style="margin: 10px; float: right;">Comment</button>
     <script>
         function addComment(){
-            alert("addcomment started");
+            
             var footer=document.createElement('div');
             var response=document.createElement('div');
             var comment=document.createElement('input');
@@ -110,7 +110,7 @@
             submit.setAttribute('onclick',"pastecomment()");
         }
         function pastecomment(){
-            alert("paste comment started");
+            
             var text=document.createElement('p');
             var container=document.createElement('div');
             text.textContent=document.querySelector(".input").value;
